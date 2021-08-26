@@ -2,11 +2,9 @@ package by.it_academy.jd2.hw.example.messenger.view;
 
 import by.it_academy.jd2.hw.example.messenger.model.Message;
 import by.it_academy.jd2.hw.example.messenger.model.User;
-import by.it_academy.jd2.hw.example.messenger.storage.MemoryChatStorage;
+import by.it_academy.jd2.hw.example.messenger.storage.ChatStorageFactory;
 import by.it_academy.jd2.hw.example.messenger.storage.api.IChatStorage;
-import by.it_academy.jd2.hw.example.messenger.storage.api.IUserStorage;
 import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IUserService;
 
 import java.util.Date;
 import java.util.List;
@@ -17,7 +15,7 @@ public class MessageService implements IMessageService {
     private final IChatStorage chatStorage;
 
     private MessageService() {
-        this.chatStorage = MemoryChatStorage.getInstance();
+        this.chatStorage = ChatStorageFactory.getInstance();
     }
 
     @Override

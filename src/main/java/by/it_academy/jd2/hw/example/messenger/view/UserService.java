@@ -1,14 +1,13 @@
 package by.it_academy.jd2.hw.example.messenger.view;
 
 import by.it_academy.jd2.hw.example.messenger.model.User;
-import by.it_academy.jd2.hw.example.messenger.storage.MemoryUserStorage;
+import by.it_academy.jd2.hw.example.messenger.storage.UserStorageFactory;
 import by.it_academy.jd2.hw.example.messenger.storage.api.IUserStorage;
 import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
 import by.it_academy.jd2.hw.example.messenger.view.api.IUserService;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 public class UserService implements IUserService {
     private final static UserService instance = new UserService();
@@ -17,7 +16,7 @@ public class UserService implements IUserService {
     private final IMessageService messageService;
 
     private UserService() {
-        this.userStorage = MemoryUserStorage.getInstance();
+        this.userStorage = UserStorageFactory.getInstance();
         this.messageService = MessageService.getInstance();
     }
 
