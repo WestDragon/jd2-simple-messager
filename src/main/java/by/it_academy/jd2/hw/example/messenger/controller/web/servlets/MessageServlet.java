@@ -2,8 +2,6 @@ package by.it_academy.jd2.hw.example.messenger.controller.web.servlets;
 
 import by.it_academy.jd2.hw.example.messenger.model.Message;
 import by.it_academy.jd2.hw.example.messenger.model.User;
-import by.it_academy.jd2.hw.example.messenger.storage.MemoryChatStorage;
-import by.it_academy.jd2.hw.example.messenger.storage.api.IChatStorage;
 import by.it_academy.jd2.hw.example.messenger.view.MessageService;
 import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
 import jakarta.servlet.ServletException;

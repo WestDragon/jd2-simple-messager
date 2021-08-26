@@ -2,10 +2,8 @@ package by.it_academy.jd2.hw.example.messenger.controller.web.servlets;
 
 import by.it_academy.jd2.hw.example.messenger.model.Message;
 import by.it_academy.jd2.hw.example.messenger.model.User;
-import by.it_academy.jd2.hw.example.messenger.storage.MemoryChatStorage;
-import by.it_academy.jd2.hw.example.messenger.storage.api.IChatStorage;
-import by.it_academy.jd2.hw.example.messenger.view.AuthService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IAuthService;
+import by.it_academy.jd2.hw.example.messenger.view.MessageService;
+import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,10 +17,10 @@ import java.util.List;
 @WebServlet(name = "ChatsServlet", urlPatterns = "/chats")
 public class ChatsServlet extends HttpServlet {
 
-    private final IChatStorage chatStorage;
+    private final IMessageService messageService;
 
     public ChatsServlet() {
-        this.chatStorage = MemoryChatStorage.getInstance();
+        this.messageService = MessageService.getInstance();
     }
 
     @Override
@@ -35,7 +33,7 @@ public class ChatsServlet extends HttpServlet {
             throw new SecurityException("Ошибка безопасности");
         }
 
-        List<Message> messages = this.chatStorage.get(user.getLogin());
+        List<Message> messages = this.messageService.get(user);
 
         req.setAttribute("chat", messages);
         req.getRequestDispatcher("/views/chats.jsp").forward(req, resp);
