@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class MessageServlet extends HttpServlet {
 
         Message message = new Message();
         message.setFrom(user.getLogin());
-        message.setSendDate(new Date());
+        message.setSendDate(LocalDateTime.now());
         message.setText(text);
 
         try{

@@ -12,4 +12,8 @@ public interface IMessageService {
 
     void addMessage(String loginRecipient, Message message);
     void addMessage(User recipient, Message message);
+
+
+    long getCount(User currentUser);
+    long getCount();
 }

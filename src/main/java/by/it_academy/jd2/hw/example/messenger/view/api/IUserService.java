@@ -8,4 +8,5 @@ public interface IUserService {
     User get(String login);
     void signUp(User user);
     Collection<User> getAll();
+    long getCount();
 }

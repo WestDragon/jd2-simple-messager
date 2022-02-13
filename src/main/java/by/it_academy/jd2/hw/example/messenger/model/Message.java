@@ -1,11 +1,12 @@
 package by.it_academy.jd2.hw.example.messenger.model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Message implements Serializable {
     private String from;
-    private Date sendDate;
+    private LocalDateTime sendDate;
     private String text;
 
     public String getFrom() {
@@ -16,11 +17,11 @@ public class Message implements Serializable {
         this.from = from;
     }
 
-    public Date getSendDate() {
+    public LocalDateTime getSendDate() {
         return sendDate;
     }
 
-    public void setSendDate(Date sendDate) {
+    public void setSendDate(LocalDateTime sendDate) {
         this.sendDate = sendDate;
     }
 

@@ -17,7 +17,7 @@ public class SecurityFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         String contextPath = req.getContextPath();
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
         if((session!=null) && (session.getAttribute("user") != null)) {
             chain.doFilter(request, response);
         } else {

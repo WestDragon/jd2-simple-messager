@@ -1,14 +1,15 @@
 package by.it_academy.jd2.hw.example.messenger.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class User implements Serializable {
     private String login;
     private String password;
     private String fio;
-    private Date birthday;
-    private Date registration;
+    private LocalDate birthday;
+    private LocalDateTime registration;
 
     public String getLogin() {
         return login;
@@ -34,19 +35,19 @@ public class User implements Serializable {
         this.fio = fio;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
-    public Date getRegistration() {
+    public LocalDateTime getRegistration() {
         return registration;
     }
 
-    public void setRegistration(Date registration) {
+    public void setRegistration(LocalDateTime registration) {
         this.registration = registration;
     }
 

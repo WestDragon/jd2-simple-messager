@@ -7,7 +7,8 @@ import by.it_academy.jd2.hw.example.messenger.storage.MemoryUserStorage;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class DefaultDataInitializer implements ServletContextListener {
     @Override
@@ -15,11 +16,11 @@ public class DefaultDataInitializer implements ServletContextListener {
         MemoryUserStorage userStorage = MemoryUserStorage.getInstance();
 
         User user = new User();
-        user.setLogin("admin");
-        user.setPassword("admin");
-        user.setFio("Админ Адинович Админов");
-        user.setBirthday(new Date());
-        user.setRegistration(user.getBirthday());
+        user.setLogin("Evil");
+        user.setPassword("666");
+        user.setFio("Evil Ivan Ivanovich");
+        user.setBirthday(LocalDate.of(1993,7, 1));
+        user.setRegistration(LocalDateTime.now());
 
         userStorage.add(user);
 
@@ -27,7 +28,7 @@ public class DefaultDataInitializer implements ServletContextListener {
 
         Message message = new Message();
         message.setFrom("unknown");
-        message.setSendDate(new Date());
+        message.setSendDate(LocalDateTime.now());
         message.setText("Я слежу за тобой!");
 
         chatStorage.addMessage(user.getLogin(), message);

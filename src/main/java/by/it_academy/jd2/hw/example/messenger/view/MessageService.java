@@ -4,11 +4,9 @@ import by.it_academy.jd2.hw.example.messenger.model.Message;
 import by.it_academy.jd2.hw.example.messenger.model.User;
 import by.it_academy.jd2.hw.example.messenger.storage.MemoryChatStorage;
 import by.it_academy.jd2.hw.example.messenger.storage.api.IChatStorage;
-import by.it_academy.jd2.hw.example.messenger.storage.api.IUserStorage;
 import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IUserService;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class MessageService implements IMessageService {
@@ -29,7 +27,7 @@ public class MessageService implements IMessageService {
     public void addSystemMessage(String loginRecipient, String text) {
         Message message = new Message();
         message.setFrom("Evil");
-        message.setSendDate(new Date());
+        message.setSendDate(LocalDateTime.now());
         message.setText(text);
 
         this.addMessage(loginRecipient, message);
@@ -43,6 +41,16 @@ public class MessageService implements IMessageService {
     @Override
     public void addMessage(User recipient, Message message) {
         this.addMessage(recipient.getLogin(), message);
+    }
+
+    @Override
+    public long getCount(User currentUser) {
+        return this.chatStorage.get(currentUser.getLogin()).size();
+    }
+
+    @Override
+    public long getCount() {
+        return this.chatStorage.getCount();
     }
 
     public static MessageService getInstance() {

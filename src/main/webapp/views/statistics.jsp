@@ -8,17 +8,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
                     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Ваши сообщения</title>
+        <title>Статистика сервера</title>
     </head>
     <body>
         <table border="1">
             <tbody>
-            <c:forEach items="${requestScope.chat}"
-            			var="message">
+            <c:forEach items="${requestScope.stats}"
+            			var="stat">
                 <tr>
-                    <td width="20%">${message.from}</td>
-                    <td width="20%">${message.sendDate}</td>
-                    <td width="60%"><c:out value="${message.text}" escapeXml="true"/></td>
+                    <td width="40%">${stat.key}</td>
+                    <td width="60%">${stat.value}</td>
                 </tr>
             </c:forEach>
             </tbody>

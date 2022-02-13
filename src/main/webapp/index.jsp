@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -13,7 +13,7 @@
 <body>
 
 <p>Приветствуем тебя <c:choose>
-                  	<c:when test="${sessionScope.user != null}">
+                  	<c:when test="${pageContext.session != null && sessionScope.user != null}">
                   	    ${sessionScope.user.fio}
                   	</c:when>
                   	<c:otherwise>
@@ -22,6 +22,7 @@
                   </c:choose>
 </p>
 <p>Ты можешь:</p>
+<p><input type="button" onclick="location.href='${pageContext.request.contextPath}/statistics';" value="Просмотреть статистику сервера" /></p>
 <c:choose>
     <c:when test="${sessionScope.user == null}">
         <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/signUp';" value="Зарегистрироваться" /></p>

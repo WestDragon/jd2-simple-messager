@@ -6,9 +6,8 @@ import by.it_academy.jd2.hw.example.messenger.storage.api.IUserStorage;
 import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
 import by.it_academy.jd2.hw.example.messenger.view.api.IUserService;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.Date;
-import java.util.List;
 
 public class UserService implements IUserService {
     private final static UserService instance = new UserService();
@@ -29,7 +28,7 @@ public class UserService implements IUserService {
     @Override
     public void signUp(User user) {
         this.validationForSignUp(user);
-        user.setRegistration(new Date());
+        user.setRegistration(LocalDateTime.now());
         this.userStorage.add(user);
 
         this.messageService.addSystemMessage(user.getLogin(), "Welcome to hell");
@@ -65,6 +64,11 @@ public class UserService implements IUserService {
     @Override
     public Collection<User> getAll() {
         return this.userStorage.getAll();
+    }
+
+    @Override
+    public long getCount() {
+        return this.userStorage.getCount();
     }
 
     public static UserService getInstance() {

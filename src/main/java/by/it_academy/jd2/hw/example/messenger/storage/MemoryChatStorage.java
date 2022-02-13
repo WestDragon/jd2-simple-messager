@@ -30,6 +30,13 @@ public class MemoryChatStorage implements IChatStorage {
         chat.add(message);
     }
 
+    @Override
+    public long getCount() {
+        return this.chats.values().stream()
+                .mapToInt(List::size)
+                .sum();
+    }
+
     public static MemoryChatStorage getInstance() {
         return instance;
     }

@@ -12,8 +12,8 @@ public class MemoryUserStorage implements IUserStorage {
 
     private final Map<String, User> users = new HashMap<>();
 
-
     private MemoryUserStorage() {
+
     }
 
     @Override
@@ -32,6 +32,11 @@ public class MemoryUserStorage implements IUserStorage {
     @Override
     public Collection<User> getAll() {
         return this.users.values();
+    }
+
+    @Override
+    public long getCount() {
+        return this.users.size();
     }
 
     public static MemoryUserStorage getInstance() {
