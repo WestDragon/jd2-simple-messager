@@ -25,7 +25,7 @@
         <p>Заходи быстрее!</p>
         </c:otherwise>
     </c:choose>
-        <form action="${pageContext.request.contextPath}/signIn" method="POST">
+        <form action="${pageContext.request.contextPath}/api/login" method="POST">
             <table>
                 <tbody>
                     <tr>

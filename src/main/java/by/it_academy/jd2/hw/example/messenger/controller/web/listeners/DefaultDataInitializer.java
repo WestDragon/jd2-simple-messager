@@ -1,9 +1,10 @@
 package by.it_academy.jd2.hw.example.messenger.controller.web.listeners;
 
-import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
-import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
 import by.it_academy.jd2.hw.example.messenger.storage.MemoryChatStorage;
 import by.it_academy.jd2.hw.example.messenger.storage.MemoryUserStorage;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.api.ERole;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 
@@ -21,6 +22,7 @@ public class DefaultDataInitializer implements ServletContextListener {
         user.setFio("Evil Ivan Ivanovich");
         user.setBirthday(LocalDate.of(1993,7, 1));
         user.setRegistration(LocalDateTime.now());
+        user.setRole(ERole.ADMIN);
 
         userStorage.add(user);
 

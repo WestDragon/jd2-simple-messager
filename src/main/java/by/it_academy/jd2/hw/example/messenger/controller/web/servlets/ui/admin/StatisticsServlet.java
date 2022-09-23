@@ -1,4 +1,4 @@
-package by.it_academy.jd2.hw.example.messenger.controller.web.servlets;
+package by.it_academy.jd2.hw.example.messenger.controller.web.servlets.ui.admin;
 
 import by.it_academy.jd2.hw.example.messenger.service.StatisticsService;
 import by.it_academy.jd2.hw.example.messenger.service.api.IStatisticsService;

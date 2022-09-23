@@ -1,8 +1,8 @@
-package by.it_academy.jd2.hw.example.messenger.controller.web.servlets;
+package by.it_academy.jd2.hw.example.messenger.controller.web.servlets.ui.admin;
 
-import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
 import by.it_academy.jd2.hw.example.messenger.service.UserService;
 import by.it_academy.jd2.hw.example.messenger.service.api.IUserService;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

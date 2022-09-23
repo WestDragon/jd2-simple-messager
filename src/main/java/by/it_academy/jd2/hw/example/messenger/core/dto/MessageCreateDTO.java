@@ -1,12 +1,8 @@
-package by.it_academy.jd2.hw.example.messenger.storage.entity;
+package by.it_academy.jd2.hw.example.messenger.core.dto;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
-public class Message implements Serializable {
+public class MessageCreateDTO {
     private String from;
     private String to;
-    private LocalDateTime sendDate;
     private String text;
 
     public String getFrom() {
@@ -23,14 +19,6 @@ public class Message implements Serializable {
 
     public void setTo(String to) {
         this.to = to;
-    }
-
-    public LocalDateTime getSendDate() {
-        return sendDate;
-    }
-
-    public void setSendDate(LocalDateTime sendDate) {
-        this.sendDate = sendDate;
     }
 
     public String getText() {

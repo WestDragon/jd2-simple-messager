@@ -1,4 +1,4 @@
-package by.it_academy.jd2.hw.example.messenger.controller.web.servlets;
+package by.it_academy.jd2.hw.example.messenger.controller.web.servlets.ui;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(name = "LogoutServlet", urlPatterns = "/logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet(name = "LogoutServlet", urlPatterns = "/ui/logout")
+public class UiLogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);

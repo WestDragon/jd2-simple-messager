@@ -1,10 +1,11 @@
 package by.it_academy.jd2.hw.example.messenger.service;
 
-import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
-import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
+import by.it_academy.jd2.hw.example.messenger.core.dto.MessageCreateDTO;
+import by.it_academy.jd2.hw.example.messenger.service.api.IMessageService;
 import by.it_academy.jd2.hw.example.messenger.storage.MemoryChatStorage;
 import by.it_academy.jd2.hw.example.messenger.storage.api.IChatStorage;
-import by.it_academy.jd2.hw.example.messenger.service.api.IMessageService;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,23 +25,21 @@ public class MessageService implements IMessageService {
     }
 
     @Override
-    public void addSystemMessage(String loginRecipient, String text) {
-        Message message = new Message();
-        message.setFrom("Evil");
-        message.setSendDate(LocalDateTime.now());
-        message.setText(text);
+    public void addMessage(MessageCreateDTO message) {
+        this.validation(message);
+        Message entity = new Message();
+        entity.setFrom(message.getFrom());
+        entity.setTo(message.getTo());
+        entity.setText(message.getText());
+        entity.setSendDate(LocalDateTime.now());
 
-        this.addMessage(loginRecipient, message);
+        this.chatStorage.addMessage(entity.getTo(), entity);
     }
 
-    @Override
-    public void addMessage(String loginRecipient, Message message) {
-        this.chatStorage.addMessage(loginRecipient, message);
-    }
-
-    @Override
-    public void addMessage(User recipient, Message message) {
-        this.addMessage(recipient.getLogin(), message);
+    public void validation(MessageCreateDTO message){
+        if(message.getTo() == null || message.getTo().isBlank()){
+            throw new IllegalArgumentException("Не заполнена информация кому отправили сообщение");
+        }
     }
 
     @Override

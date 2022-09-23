@@ -22,7 +22,7 @@
         <p>${sessionScope.user.fio}, быстрее отправь сообщение!</p>
     </c:otherwise>
 </c:choose>
-        <form action="${pageContext.request.contextPath}/message" method="POST">
+        <form action="${pageContext.request.contextPath}/api/message" method="POST">
             <table>
                 <tbody>
                     <tr>

@@ -22,16 +22,18 @@
                   </c:choose>
 </p>
 <p>Ты можешь:</p>
-<p><input type="button" onclick="location.href='${pageContext.request.contextPath}/statistics';" value="Просмотреть статистику сервера" /></p>
+<c:if test="${sessionScope.user != null && 'ADMIN'.equals(sessionScope.user.role.name()) }">
+    <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/ui/admin/statistics';" value="Просмотреть статистику сервера" /></p>
+</c:if>
 <c:choose>
     <c:when test="${sessionScope.user == null}">
-        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/signUp';" value="Зарегистрироваться" /></p>
-        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/signIn';" value="Войти" /></p>
+        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/ui/signUp';" value="Зарегистрироваться" /></p>
+        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/ui/signIn';" value="Войти" /></p>
     </c:when>
     <c:otherwise>
-        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/chats';" value="Просмотреть свои сообщения" /></p>
-        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/message';" value="Отправить сообщения" /></p>
-        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/logout';" value="Выйти" /></p>
+        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/ui/user/chats';" value="Просмотреть свои сообщения" /></p>
+        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/ui/user/message';" value="Отправить сообщения" /></p>
+        <p><input type="button" onclick="location.href='${pageContext.request.contextPath}/ui/logout';" value="Выйти" /></p>
     </c:otherwise>
 </c:choose>
 </body>

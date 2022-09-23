@@ -19,7 +19,7 @@
         <p>Пройдите регистрацию</p>
     </c:otherwise>
 </c:choose>
-        <form action="${pageContext.request.contextPath}/signUp" method="POST">
+        <form action="${pageContext.request.contextPath}/api/user" method="POST">
             <table>
                 <tbody>
                     <tr>

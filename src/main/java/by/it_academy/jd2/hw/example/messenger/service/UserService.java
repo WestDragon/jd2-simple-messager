@@ -1,10 +1,12 @@
 package by.it_academy.jd2.hw.example.messenger.service;
 
-import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
-import by.it_academy.jd2.hw.example.messenger.storage.MemoryUserStorage;
-import by.it_academy.jd2.hw.example.messenger.storage.api.IUserStorage;
+import by.it_academy.jd2.hw.example.messenger.core.dto.UserCreateDTO;
 import by.it_academy.jd2.hw.example.messenger.service.api.IMessageService;
 import by.it_academy.jd2.hw.example.messenger.service.api.IUserService;
+import by.it_academy.jd2.hw.example.messenger.storage.MemoryUserStorage;
+import by.it_academy.jd2.hw.example.messenger.storage.api.IUserStorage;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.api.ERole;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -26,15 +28,23 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void signUp(User user) {
+    public User signUp(UserCreateDTO user) {
         this.validationForSignUp(user);
-        user.setRegistration(LocalDateTime.now());
-        this.userStorage.add(user);
+        User entity = new User();
 
-        this.messageService.addSystemMessage(user.getLogin(), "Welcome to hell");
+        entity.setLogin(user.getLogin());
+        entity.setPassword(user.getPassword());
+        entity.setFio(user.getFio());
+        entity.setBirthday(user.getBirthday());
+        entity.setRegistration(LocalDateTime.now());
+        entity.setRole(ERole.USER);
+
+        this.userStorage.add(entity);
+
+        return entity;
     }
 
-    private void validationForSignUp(User user){
+    private void validationForSignUp(UserCreateDTO user){
         String errorMessage = "";
         if(this.nullOrEmpty(user.getLogin())){
             errorMessage += "Логин обязателен для заполнения";
