@@ -1,9 +1,9 @@
 package by.it_academy.jd2.hw.example.messenger.controller.web.servlets;
 
-import by.it_academy.jd2.hw.example.messenger.model.Message;
-import by.it_academy.jd2.hw.example.messenger.model.User;
-import by.it_academy.jd2.hw.example.messenger.view.MessageService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
+import by.it_academy.jd2.hw.example.messenger.service.MessageService;
+import by.it_academy.jd2.hw.example.messenger.service.api.IMessageService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,8 +13,6 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 
 @WebServlet(name = "MessageServlet", urlPatterns = "/message")
 public class MessageServlet extends HttpServlet {

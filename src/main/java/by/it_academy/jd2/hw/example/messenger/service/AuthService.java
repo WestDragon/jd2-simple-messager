@@ -1,8 +1,8 @@
-package by.it_academy.jd2.hw.example.messenger.view;
+package by.it_academy.jd2.hw.example.messenger.service;
 
-import by.it_academy.jd2.hw.example.messenger.model.User;
-import by.it_academy.jd2.hw.example.messenger.view.api.IAuthService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IUserService;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
+import by.it_academy.jd2.hw.example.messenger.service.api.IAuthService;
+import by.it_academy.jd2.hw.example.messenger.service.api.IUserService;
 
 import java.util.Objects;
 

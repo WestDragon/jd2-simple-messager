@@ -1,8 +1,8 @@
-package by.it_academy.jd2.hw.example.messenger.view;
+package by.it_academy.jd2.hw.example.messenger.service;
 
-import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IStatisticsService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IUserService;
+import by.it_academy.jd2.hw.example.messenger.service.api.IMessageService;
+import by.it_academy.jd2.hw.example.messenger.service.api.IStatisticsService;
+import by.it_academy.jd2.hw.example.messenger.service.api.IUserService;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package by.it_academy.jd2.hw.example.messenger.model;
+package by.it_academy.jd2.hw.example.messenger.storage.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;

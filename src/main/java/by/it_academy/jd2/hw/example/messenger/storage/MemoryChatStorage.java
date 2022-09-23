@@ -1,6 +1,6 @@
 package by.it_academy.jd2.hw.example.messenger.storage;
 
-import by.it_academy.jd2.hw.example.messenger.model.Message;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
 import by.it_academy.jd2.hw.example.messenger.storage.api.IChatStorage;
 
 import java.util.ArrayList;

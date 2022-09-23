@@ -1,6 +1,6 @@
 package by.it_academy.jd2.hw.example.messenger.storage.api;
 
-import by.it_academy.jd2.hw.example.messenger.model.Message;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
 
 import java.util.List;
 

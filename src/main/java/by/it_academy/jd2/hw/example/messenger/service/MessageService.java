@@ -1,10 +1,10 @@
-package by.it_academy.jd2.hw.example.messenger.view;
+package by.it_academy.jd2.hw.example.messenger.service;
 
-import by.it_academy.jd2.hw.example.messenger.model.Message;
-import by.it_academy.jd2.hw.example.messenger.model.User;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.Message;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
 import by.it_academy.jd2.hw.example.messenger.storage.MemoryChatStorage;
 import by.it_academy.jd2.hw.example.messenger.storage.api.IChatStorage;
-import by.it_academy.jd2.hw.example.messenger.view.api.IMessageService;
+import by.it_academy.jd2.hw.example.messenger.service.api.IMessageService;
 
 import java.time.LocalDateTime;
 import java.util.List;

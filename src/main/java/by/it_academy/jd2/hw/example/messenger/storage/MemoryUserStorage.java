@@ -1,7 +1,7 @@
 package by.it_academy.jd2.hw.example.messenger.storage;
 
 import by.it_academy.jd2.hw.example.messenger.storage.api.IUserStorage;
-import by.it_academy.jd2.hw.example.messenger.model.User;
+import by.it_academy.jd2.hw.example.messenger.storage.entity.User;
 
 import java.util.Collection;
 import java.util.HashMap;

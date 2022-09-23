@@ -1,7 +1,7 @@
 package by.it_academy.jd2.hw.example.messenger.controller.web.listeners;
 
-import by.it_academy.jd2.hw.example.messenger.view.StatisticsService;
-import by.it_academy.jd2.hw.example.messenger.view.api.IStatisticsService;
+import by.it_academy.jd2.hw.example.messenger.service.StatisticsService;
+import by.it_academy.jd2.hw.example.messenger.service.api.IStatisticsService;
 import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;
 
